@@ -57,8 +57,7 @@
 
 -(void)setup
 {
-//    [self setBackgroundColor:[UIColor colorWithHexString:@"333333"]];
-//    self.alpha = 0.9;
+    
     self.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.7];
     
     self.layer.cornerRadius = 5.f;
@@ -161,15 +160,15 @@
         
         popView.tipLabel.text = tipStr;
         
-        [popView.tipLabel setBackgroundColor:[UIColor clearColor]];
+        [popView.tipLabel setBackgroundColor:superView.backgroundColor];
         
         [popView.tipLabel setTextAlignment:NSTextAlignmentCenter];
 
-        [popView setRoundBoundWithWidth:0.f Radius:8.f WithColor:[UIColor whiteColor]];
+        [popView setRoundBoundWithWidth:0.f Radius:5.f WithColor:[UIColor whiteColor]];
         
         [superView addSubview:popView];
         
-        popView.center = CGPointMake(superView.center.x, superView.bounds.size.height-150);
+        popView.center = CGPointMake(superView.center.x, superView.bounds.size.height/2);
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [popView removeFromSuperview];
