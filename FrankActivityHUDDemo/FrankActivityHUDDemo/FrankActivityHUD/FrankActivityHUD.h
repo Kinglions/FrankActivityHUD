@@ -70,8 +70,8 @@ typedef NS_ENUM(NSInteger,FrankActivityHUDDisappearAnimationType) {
 
  - FrankActivityHUDOverlayTypeNone: 没有遮罩层，默认状态
  - FrankActivityHUDOverlayTypeBlur: 高斯遮照层
- - FrankActivityHUDOverlayTypeTransparent: 透明灰度遮照层
- - FrankActivityHUDOverlayTypeShadow: 阴影遮罩层
+ - FrankActivityHUDOverlayTypeTransparent: 透明遮罩层
+ - FrankActivityHUDOverlayTypeShadow: 透明灰度遮照层
  */
 typedef NS_ENUM(NSInteger,FrankActivityHUDOverlayType) {
     FrankActivityHUDOverlayType_None = 0,

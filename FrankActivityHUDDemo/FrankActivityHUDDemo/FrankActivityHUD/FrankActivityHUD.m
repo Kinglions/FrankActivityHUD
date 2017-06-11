@@ -558,7 +558,7 @@
         self.appearAnimationType = FrankActivityHUDAppearAnimationType_ZoomIn;
         self.disAppearAnimationType = FrankActivityHUDDisappearAnimationType_ZoomOut;
         // 5、设置遮照层样式
-        self.overlayType = FrankActivityHUDOverlayType_Shadow;
+        self.overlayType = FrankActivityHUDOverlayType_Transparent;
         // 6、添加通知监听者
         [self addNotificationObserver];
         
@@ -767,7 +767,7 @@
  */
 -(void)initializeImageBounce{
     
-    self.overlayType = FrankActivityHUDOverlayType_Shadow;
+    self.overlayType = FrankActivityHUDOverlayType_Transparent;
     self.layer.masksToBounds = NO;
 
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(Frame_HeightFor(self)/10,0, Frame_HeightFor(self)*4/5, Frame_HeightFor(self)*4/5)];
@@ -1511,10 +1511,7 @@
 
 - (void)addTransparentOverlay {
     self.overlay = [[UIView alloc] initWithFrame:FrameFor(Current_Screen)];
-    self.overlay.backgroundColor = [UIColor blackColor];
-//    self.overlay.alpha = self.alpha-.25>0?self.alpha-.2:0.15;
-    self.overlay.alpha = 0.5;
-
+    self.overlay.backgroundColor = [UIColor clearColor];
     
     [[[UIApplication sharedApplication].windows lastObject] addSubview:self.overlay];
 }
@@ -1522,7 +1519,8 @@
 - (void)addShadowOverlay {
     
     self.overlay = [[UIView alloc] initWithFrame:FrameFor(Current_Screen)];
-    self.overlay.backgroundColor = [UIColor clearColor];
+    self.overlay.backgroundColor = [UIColor blackColor];
+    self.overlay.alpha = 0.5;
     
     self.overlay.layer.shadowColor = [UIColor blackColor].CGColor;
     self.overlay.layer.shadowOffset = CGSizeMake(-2.0, -2.0);

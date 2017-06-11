@@ -65,17 +65,18 @@
 //    self.hud.indicatorColor = [UIColor purpleColor];
 //    self.hud.hudBackgroundColor = [UIColor greenColor];
 //    self.hud.appearAnimationType = FrankActivityHUDAppearAnimationType_ZoomIn;
-//    
-//    [self.hud showWithType:FrankActivityHUDShowIndicatorType_ImageBounce];
-//    
+//
+//    self.hud.overlayType = FrankActivityHUDOverlayType_Shadow;
+//    [self.hud showWithType:FrankActivityHUDShowIndicatorType_DynamicArc];
+//
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
+//
 //        [self.hud dismiss];
-//        
+//
 //    });
     
-//    [self.hud showWithText:@"对象方法提示" shimmering:YES];
-    [PopTipView showInView:nil wihtTipText:@"这是 PopTipVIew 提示"];
+    [self.hud showWithText:@"对象方法提示" shimmering:YES];
+//    [PopTipView showInView:nil wihtTipText:@"这是 PopTipVIew 提示"];
     
 }
 
