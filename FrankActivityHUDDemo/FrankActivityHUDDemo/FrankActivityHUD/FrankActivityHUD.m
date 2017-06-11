@@ -99,7 +99,6 @@
 + (void)showWithType:(FrankActivityHUDShowIndicatorType)type isShowLodingTitle:(BOOL)isShow{
     
     FrankActivityHUD * hud = [[FrankActivityHUD alloc] init];
-//    hud.isTheOnlyActiveView = NO;
 
     if (!hud.superview) {
         
@@ -127,7 +126,7 @@
 + (void)showWithText:(NSString *)text shimmering:(BOOL)shimmering{
     
     FrankActivityHUD * hud = [[FrankActivityHUD alloc] init];
-//    hud.isTheOnlyActiveView = NO;
+    
     hud.overlayType = FrankActivityHUDOverlayType_None;
     if (!hud.superview) {
         CGFloat height = [hud heightForText:text]+16;
@@ -1107,26 +1106,6 @@
     [self.imageView startAnimating];
     
 }
-///**
-// 监听动画结束代理方法方法
-//
-// @param anim 动画对象
-// @param flag 是否正常移除
-// */
-//-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-//    
-//    FrankLog(@"-----%@----%d",anim,flag);
-//    
-//    self.count ++;
-//    
-//    if (self.count >= self.imgBounceArr.count) {
-//        self.count = 0;
-//    }
-//    
-//    self.imageView.image = [UIImage imageNamed:self.imgBounceArr[self.count]];
-//    
-//    
-//}
 #pragma mark --- 配置指示器消失样式 ----
 /**
  hud 视图消失动画
@@ -1434,11 +1413,6 @@
     
     [self addAppearAnimation];
     
-//    if (self.isTheOnlyActiveView) {
-//        for (UIView *view in self.superview.subviews) {
-//            view.userInteractionEnabled = NO;
-//        }
-//    }
 }
 /**
  绘制弧形路径
