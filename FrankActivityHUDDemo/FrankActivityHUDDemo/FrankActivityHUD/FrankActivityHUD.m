@@ -222,7 +222,10 @@
         
         [UIView animateWithDuration:0.3 animations:^{
             
-            hud.frame = [hud originalFrame];
+            if (!hud.isShowLoadingTitle) {
+                
+                hud.frame = [hud originalFrame];
+            }
             hud.center = CGPointMake(Frame_WidthFor(Current_Screen)/2, Frame_HeightFor(Current_Screen)/2);
         }];
         
@@ -382,7 +385,11 @@
         
         [UIView animateWithDuration:0.3 animations:^{
             
-            self.frame = [self originalFrame];
+            if (!self.isShowLoadingTitle) {
+                
+                self.frame = [self originalFrame];
+                
+            }
             self.center = CGPointMake(Frame_WidthFor(Current_Screen)/2, Frame_HeightFor(Current_Screen)/2);
         }];
         
@@ -862,6 +869,11 @@
     CGFloat radius = Frame_WidthFor(self.replicatorLayer)/2 - Frame_WidthFor(self.replicatorLayer)/5;
     CGFloat x = CGRectGetMidX(self.replicatorLayer.frame);
     CGFloat y = CGRectGetMidY(self.replicatorLayer.frame);
+    if (self.isShowLoadingTitle) {
+        
+        y = CGRectGetMidY(self.replicatorLayer.frame) + 5;
+        
+    }
     CGFloat startAngle = -M_PI_2;
     
     UIBezierPath * bezierPath = [UIBezierPath bezierPath];
