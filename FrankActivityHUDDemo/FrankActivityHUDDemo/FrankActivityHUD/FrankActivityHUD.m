@@ -125,6 +125,11 @@
  */
 + (void)showWithText:(NSString *)text shimmering:(BOOL)shimmering{
     
+    if (!text || text.length <= 0) {
+        
+        return;
+    }
+    
     FrankActivityHUD * hud = [[FrankActivityHUD alloc] init];
     
     hud.overlayType = FrankActivityHUDOverlayType_None;
@@ -312,6 +317,12 @@
     }
 }
 - (void)showWithText:(NSString *)text shimmering:(BOOL)shimmering{
+    
+    if (!text || text.length <= 0) {
+        
+        return;
+    }
+    
     if (!self.superview) {
         
         self.overlayType = FrankActivityHUDOverlayType_None;
